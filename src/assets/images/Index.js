@@ -3,4 +3,5 @@ export const images = {
   logo: require('./logo.png'),
   arrow: require('./arrow.png'),
   letArrow: require('./left-arrow.png'),
+  profileBg: require('./profilebg.png'),
 };

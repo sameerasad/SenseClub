@@ -58,25 +58,7 @@ const AuthenticationStack = () => {
 const TabStack = () => {
   return (
     <Tab.Navigator sceneContainerStyle={{backgroundColor: '#00000'}}>
-      <Tab.Screen
-        name="Home"
-        options={{headerShown: false}}
-        component={Home}
-        // options={{
-        //   title: 'Home',
-
-        //   tabBarIcon: ({size, focused, color}) => {
-        //     return (
-        //       <Image
-        //         style={{width: size, height: size}}
-        //         source={{
-        //           uri: images.arrow,
-        //         }}
-        //       />
-        //     );
-        //   },
-        // }}
-      />
+      <Tab.Screen name="Home" options={{headerShown: false}} component={Home} />
       <Tab.Screen
         name="Profile"
         component={Profie}
