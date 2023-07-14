@@ -62,20 +62,7 @@ const TabStack = () => {
         name="Home"
         options={{headerShown: false}}
         component={Home}
-        // options={{
-        //   title: 'Home',
-
-        //   tabBarIcon: ({size, focused, color}) => {
-        //     return (
-        //       <Image
-        //         style={{width: size, height: size}}
-        //         source={{
-        //           uri: images.arrow,
-        //         }}
-        //       />
-        //     );
-        //   },
-        // }}
+     
       />
       <Tab.Screen
         name="Profile"
