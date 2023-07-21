@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image,screenOptions} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -13,13 +13,15 @@ import {
   CreatePost,
   Explore,
   Home,
-  Profie,
+  Profile,
+  SinglePostScreen,
 } from '../screens/index';
 import {images} from '../assets/images/Index';
 
 const AuthStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const RootStack = createNativeStackNavigator();
+const Detail = createNativeStackNavigator();
 
 const AuthenticationStack = () => {
   return (
@@ -57,16 +59,16 @@ const AuthenticationStack = () => {
 
 const TabStack = () => {
   return (
-    <Tab.Navigator sceneContainerStyle={{backgroundColor: '#00000'}}>
+    <Tab.Navigator  sceneContainerStyle={{backgroundColor: '#00000'}} 
+    >
       <Tab.Screen
         name="Home"
         options={{headerShown: false}}
         component={Home}
-     
       />
       <Tab.Screen
         name="Profile"
-        component={Profie}
+        component={Profile}
         options={{headerShown: false}}
       />
       <Tab.Screen
@@ -83,6 +85,20 @@ const TabStack = () => {
   );
 };
 
+const DetailStack = () => {
+  return (
+    <Detail.Navigator initialRouteName={SinglePostScreen}>
+      <Detail.Screen
+        options={{headerShown: false}}
+        name="SinglePostScreen"
+        component={SinglePostScreen}
+      />
+    </Detail.Navigator>
+  );
+};
+ 
+
+
 const RootNavigator = () => {
   return (
     <RootStack.Navigator>
@@ -96,9 +112,16 @@ const RootNavigator = () => {
         name="TabStack"
         component={TabStack}
       />
+       <RootStack.Screen
+        options={{headerShown: false}}
+        name="DetailStack"
+        component={DetailStack}
+      />
     </RootStack.Navigator>
   );
 };
+
+
 
 const AppNavigator = () => {
   const routeNameRef = useRef();

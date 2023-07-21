@@ -28,13 +28,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {AppNavigator} from './src/config/Routes';
+import { SignUp } from './src/screens';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  return <SignUp />;
+  return <SignUp navigation={undefined} />;
 }
 
 function App(): JSX.Element {

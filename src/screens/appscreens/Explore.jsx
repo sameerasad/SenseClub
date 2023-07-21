@@ -86,7 +86,7 @@ const Explore = ({navigation}) => {
           </View>
 
           {[1, 2, 3].map(() => (
-            <OfferCard />
+            <OfferCard navigation={navigation}  />
           ))}
         </View>
       </ScrollView>

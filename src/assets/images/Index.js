@@ -8,4 +8,9 @@ export const images = {
   searchIcon: require('./search.png'),
   userIcon: require('./user.png'),
   viewIcon: require('./view.png'),
+  CircleAvatar: require('./circular-avatar.png'),
+  TagIcon: require('./price-tag.png'),
+  shareIcon: require('./share.png'),
+  homeSlideImage : require('./homeSlideImage.jpg'),
+  profileBgImage : require('./profileBgImage.png')
 };

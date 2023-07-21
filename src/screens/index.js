@@ -6,7 +6,8 @@ import SplashScreen from './commonscreen/Splash';
 import CreatePost from './appscreens/CreatePost';
 import Explore from './appscreens/Explore';
 import Home from './appscreens/Home';
-import Profie from './appscreens/Profie';
+import Profile from './appscreens/Profile';
+import SinglePostScreen from './homeScreen/SinglePostScreen';
 
 export {
   Login,
@@ -16,6 +17,7 @@ export {
   SplashScreen,
   CreatePost,
   Explore,
-  Profie,
+  Profile,
   Home,
+  SinglePostScreen,
 };

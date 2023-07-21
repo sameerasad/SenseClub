@@ -5,15 +5,21 @@ import {
   Dimensions,
   Image,
   ImageBackground,
+  TouchableOpacity
 } from 'react-native';
 import React from 'react';
 const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 
 const windowHeight = Dimensions.get('screen').height;
 
-const OfferCard = () => {
+const OfferCard = ({navigation}) => {
+    
   return (
-    <View style={styles.mainContainer}>
+    <TouchableOpacity
+        onPress={()=>navigation.navigate("DetailStack",{
+        name:"SinglePostScreen"
+    })}
+     style={styles.mainContainer}>
       <ImageBackground
         imageStyle={{borderRadius: 35,opacity:0.8, backgroundColor:'black' }}
         style={{flex: 1, justifyContent: 'center'}}
@@ -44,7 +50,7 @@ const OfferCard = () => {
             </Text>
         </View>
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   );
 };
 

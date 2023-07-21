@@ -2,7 +2,7 @@ import {Text, StyleSheet,View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 const ChipsWithText = ({text,index,activeIndex,handleActiveIndex=()=>{}}) => {
-  console.log(activeIndex)
+  
   return (
     <><TouchableOpacity
         onPress={()=>handleActiveIndex(index,"index")}
