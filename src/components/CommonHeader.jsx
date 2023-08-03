@@ -16,7 +16,7 @@ const CommonHeader = ({onPress = () => {}, showBackArrow = true}) => {
       <View style={styles.firstChild}>
         {showBackArrow && (
           <TouchableOpacity onPress={() => onPress()}>
-            <Image style={{height: 20, width: 20}} source={images.letArrow} />
+            <Image style={{height: 20, width: 20,tintColor:'white',}} source={images.letArrow} />
           </TouchableOpacity>
         )}
       </View>

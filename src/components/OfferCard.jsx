@@ -26,10 +26,10 @@ const OfferCard = ({navigation}) => {
         source={require('../assets/images/exploreScrollImage.jpg')}
         resizeMode="cover">
         <View style={{flexDirection: 'row-reverse',paddingBottom:20}}>
-          <Text style={{backgroundColor: 'pink',color:'white',fontWeight:'bold',paddingLeft:5,paddingRight:5}}>Giveaways</Text>
+          <Text style={{backgroundColor: 'pink',color:'white',paddingLeft:5,paddingRight:5,fontFamily:'Poppins-SemiBold'}}>Giveaways</Text>
         </View>
         <View style={{flexDirection: 'row',paddingLeft:10,paddingTop:30}}>
-          <Text style={{color: 'white', fontSize: 18, fontWeight: '900'}}>
+          <Text style={{color: 'white', fontSize: 18, fontFamily:'Poppins-Bold'}}>
             Giveaway Prize!!! - 12/12/2020
           </Text>
         </View>
@@ -39,13 +39,13 @@ const OfferCard = ({navigation}) => {
               style={{width: 20, height: 20,tintColor: 'white'}}
               source={require('../assets/images/user.png')}
             />
-            <Text style={{color:'white',fontWeight:'bold',marginLeft:8,marginTop:3}}>SenseClub</Text>
-            <Text style={{color:'white',fontWeight:'bold'}}  >  .  </Text>
+            <Text style={{color:'white',marginLeft:8,marginTop:3,fontFamily:'Poppins-SemiBold'}}>SenseClub</Text>
+            <Text style={{color:'white',fontFamily:'Poppins-SemiBold'}}  >  .  </Text>
             <Image
               style={{width: 20, height: 20,tintColor: 'white',marginLeft:8,marginTop:6}}
               source={require('../assets/images/view.png')}
             />
-            <Text style={{color:'white',fontWeight:'bold',marginLeft:8,marginTop:5}} >
+            <Text style={{color:'white',marginLeft:8,marginTop:5,fontFamily:'Poppins-SemiBold'}} >
                 44
             </Text>
         </View>

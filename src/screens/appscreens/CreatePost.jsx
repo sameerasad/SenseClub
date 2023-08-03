@@ -65,7 +65,7 @@ const CreatePost = () => {
                   justifyContent: 'space-between',
                   backgroundColor: '#E5E5E5',
                 }}>
-                <Text>{selectedvalue} </Text>
+                <Text style={{fontFamily:'Poppins-Medium'}}>{selectedvalue} </Text>
                 <Image
                   style={{width: 15, height: 15}}
                   source={require('../../assets/images/downward-arrow.png')}
@@ -80,7 +80,7 @@ const CreatePost = () => {
             <TouchableOpacity onPress={()=>setShowCustomModal(true)}>
          
               <View style={Styles.uploadButton}>
-                <Text style={{color: 'white',fontWeight:'bold'}}>UPLOAD</Text>
+                <Text style={{color: 'white',fontFamily:'Poppins-SemiBold'}}>UPLOAD</Text>
               </View>
             </TouchableOpacity>
         
@@ -112,6 +112,7 @@ const CreatePost = () => {
                     innerIconStyle={{borderWidth: 2, borderRadius: 5}}
                     textStyle={{
                       textDecorationLine: 'none',
+                      fontFamily:'Poppins-Medium',
                     }}
                     onPress={() => {}}
                   />
@@ -123,7 +124,7 @@ const CreatePost = () => {
             <TouchableOpacity>
          
          <View style={Styles.submitButton}>
-           <Text style={{color: 'white',fontWeight:'bold'}}>Submit Post</Text>
+           <Text style={{color: 'white',fontFamily:'Poppins-SemiBold'}}>Submit Post</Text>
          </View>
        </TouchableOpacity>
           </View>
@@ -144,15 +145,17 @@ const CreatePost = () => {
 };
 const Styles = StyleSheet.create({
   heading: {
-    fontWeight: 'bold',
+    
     fontSize: 17,
     marginTop: 20,
+    fontFamily:'Poppins-Bold',
   },
   bottomText: {
-    fontStyle: 'italic',
-    fontWeight: '300',
+    
+    
     fontSize: 15,
     marginTop: 5,
+    fontFamily:'Poppins-LightItalic'
   },
   uploadButton: {
     marginTop: 10,

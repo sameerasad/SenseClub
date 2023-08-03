@@ -12,5 +12,7 @@ export const images = {
   TagIcon: require('./price-tag.png'),
   shareIcon: require('./share.png'),
   homeSlideImage : require('./homeSlideImage.jpg'),
-  profileBgImage : require('./profileBgImage.png')
+  profileBgImage : require('./profileBgImage.png'),
+  sendImage : require('./send.png'),
+  
 };

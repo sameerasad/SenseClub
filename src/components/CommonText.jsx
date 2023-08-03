@@ -7,8 +7,10 @@ const CommonText = ({text}) => {
 
 const styles = StyleSheet.create({
   heading: {
-    fontWeight: 'bold',
+    fontFamily:'Poppins-Bold',
     marginTop: 20,
+    fontSize:17,
+    
   },
 });
 

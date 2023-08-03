@@ -38,7 +38,7 @@ const ProfileTabViewExample = () => {
         ))}
       </View>
       <FlatList
-      style={{padding:10}}
+      style={{padding:5}}
         data={status == 'Posts' ? arr : status == 'Shop' ? arr1 : arr2}
         keyExtractor={(s, j) => j.toString()}
         renderItem={() => <ProfileListTile />}
@@ -74,7 +74,8 @@ const Styles = StyleSheet.create({
   },
   textTab: {
     fontSize: 15,
-    fontWeight: 'bold',
+    
+    fontFamily:'Poppins-Bold',
   },
   BtnTabActive: {},
   textTabActive: {

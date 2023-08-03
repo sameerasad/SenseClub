@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Button, Text,Image,TouchableOpacity } from 'react-native';
 import Comment from './Comment';
+import { images } from '../assets/images/Index';
+import { colors } from '../config/colors';
 
 const Comments = ({ comments }) => {
   const [newCommentText, setNewCommentText] = useState('');
@@ -24,6 +26,7 @@ const Comments = ({ comments }) => {
     };
 
     const updatedCommentList = [...commentList, newComment];
+      
     setCommentList(updatedCommentList);
     console.log(updatedCommentList),
     setNewCommentText('');
@@ -31,21 +34,36 @@ const Comments = ({ comments }) => {
 
   return (
     <View>
+    <Text style={styles.PostHeading}>Comments</Text>
       {/* Render existing comments */}
       {commentList.map((comment) => (
         <Comment key={comment.id} comment={comment} />
       ))}
 
       {/* New comment input */}
-      <View style={styles.newCommentContainer}>
-        <TextInput
-          style={styles.newCommentInput}
-          value={newCommentText}
-          onChangeText={setNewCommentText}
-          placeholder="Type your comment..."
-        />
-     <Button title="Add Comment" onPress={handleCommentSubmit} /> 
-      </View>
+      <View style={{flexDirection:'column',flex:1,}}>
+        <View style={styles.newCommentContainer}>
+          <TextInput
+            style={styles.newCommentInput}
+            value={newCommentText}
+            onChangeText={setNewCommentText}
+            placeholder="Leave comment..."
+            placeholderTextColor='white'
+            
+          />
+          <TouchableOpacity onPress={()=> newCommentText.length? handleCommentSubmit():()=>{}} >
+          <View style={{borderWidth:0,padding:10,borderRadius:30,backgroundColor:'#b59f84'}}>
+          <Image 
+   style={{width: 30, height: 30,}}
+                      source={require('../assets/images/paper-plane.png')}
+  
+          />
+          </View>
+          </TouchableOpacity>
+       {/* <Button title="Add Comment" onPress={handleCommentSubmit} />  */}
+        </View>
+        <View style={{height:20,backgroundColor:'black'}}></View>
+        </View>
     </View>
   );
 };
@@ -53,19 +71,31 @@ const Comments = ({ comments }) => {
 const styles = {
   newCommentContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
+ 
+    // alignItems: 'center',
     marginTop: 10,
-    marginBottom: 10,
-    position:'bottom',
+    // marginBottom: 10,
+padding:10,
+
+backgroundColor:'#4C4E52',
+
   },
   newCommentInput: {
     flex: 1,
-    marginRight: 10,
-    borderWidth: 1,
-    borderColor: '#ccc',
+    // marginRight: 10,
+   
+
+    // borderWidth: 1,
+    // borderColor: '#ccc',
     borderRadius: 4,
     padding: 5,
     fontSize: 14,
+  },
+  PostHeading: {
+    padding: 20,
+    fontSize: 25,
+    color: 'black',
+    fontFamily:'Poppins-ExtraBold'
   },
 };
 

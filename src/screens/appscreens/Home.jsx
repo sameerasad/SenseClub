@@ -44,19 +44,11 @@ const Home = ({navigation}) => {
         <View style={Styles.divider}></View>
       </View>
       
-      {/* <FlatList data={arr} 
-        renderItem={()=> <ListTile/>}
-        ItemSeparatorComponent={this.renderSeparator}
-      /> */}
+
     
       </View>
       <TabViewExample/>
-{/*       
-      <View 
 
-        style={{backgroundColor:"red",height:400}}
-      />
-     */}
      
  
     
@@ -73,9 +65,10 @@ const Styles = StyleSheet.create({
     flex: 1,
   },
   heading: {
-    fontWeight: '500',
+    
     fontSize: 21,
     marginTop: 40,
+    fontFamily:"Poppins-ExtraBold"
 
   },
 
@@ -104,6 +97,7 @@ const Styles = StyleSheet.create({
     fontWeight: '500',
     minHeight: 175,
     textAlignVertical:'center',
+    fontFamily:'Poppins-Bold'
     
   },
   sliderButton: {
@@ -114,6 +108,8 @@ const Styles = StyleSheet.create({
     display: 'inline',
     borderColor: '#b59f84',
     borderWidth: 1,
+
+
   },
 
 });

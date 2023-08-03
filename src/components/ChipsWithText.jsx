@@ -9,13 +9,13 @@ const ChipsWithText = ({text,index,activeIndex,handleActiveIndex=()=>{}}) => {
     >
       <View style={{ marginLeft:10,
        backgroundColor:index==activeIndex?"#6666":"#ffff",
-       padding:10,
+       padding:7,
        paddingLeft:15,
        paddingRight:15,
        borderWidth:1,
       borderRadius:25,
       }}>
-      <Text style={{color:index==activeIndex?"#ffff":"#6666"}}>{text}</Text>
+      <Text style={{color:index==activeIndex?"#ffff":"#6666",fontFamily:'Poppins-Medium'}}>{text}</Text>
     </View>
     </TouchableOpacity></>
   );

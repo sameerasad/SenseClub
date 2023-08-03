@@ -4,7 +4,7 @@ import React from 'react';
 const AuthButton = ({buttonText, textColor, onPress = () => {}}) => {
   return (
     <TouchableOpacity onPress={() => onPress()} style={styles.button}>
-      <Text style={{color: textColor}}>{buttonText}</Text>
+      <Text style={{color: textColor,fontFamily:'Poppins-SemiBold'}}>{buttonText}</Text>
     </TouchableOpacity>
   );
 };

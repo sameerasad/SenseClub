@@ -23,7 +23,7 @@ import {
             style={{width: 35, height: 35}}
             source={require('../assets/images/circular-avatar.png')}
           />
-          <Text style={{paddingLeft: 10, fontSize: 18, fontWeight: 500}}>
+          <Text style={{paddingLeft: 10, fontSize: 15, fontFamily:'Poppins-Medium'}}>
             Hi im testing Tile length of this
           </Text>
         </View>

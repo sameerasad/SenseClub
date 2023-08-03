@@ -11,4 +11,5 @@ import ImageWithTextSlider  from './ImageWithTextSlider';
 import ListTile from './ListTile';
 import TabViewExample from './TabBarView';
 import ProfileTabViewExample from './ProfileTabViewExample';
-export {AuthButton, Input, CommonText, CommonHeader, ChipsWithText,OfferCard,SubscribeModal,HomeSlider,HomeImage,ImageWithTextSlider,ListTile,TabViewExample};
+import ChipComponent from './ChipsComponent';
+export {AuthButton, Input, CommonText, CommonHeader, ChipsWithText,OfferCard,SubscribeModal,HomeSlider,HomeImage,ImageWithTextSlider,ListTile,TabViewExample,ChipComponent};

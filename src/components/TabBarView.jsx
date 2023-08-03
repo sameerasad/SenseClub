@@ -79,7 +79,8 @@ const Styles = StyleSheet.create({
   },
   textTab: {
     fontSize: 15,
-    fontWeight:'bold',
+   
+    fontFamily:"Poppins-Bold"
   },
   BtnTabActive: {
   

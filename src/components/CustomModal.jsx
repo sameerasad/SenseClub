@@ -48,31 +48,37 @@ const CustomModal = ({show = false, close, changeValue, data}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Text style={{fontWeight: 'bold', fontSize: 20}}>
+              <Text style={{fontFamily:'Poppins-Bold', fontSize: 20}}>
                 Select From the Following
               </Text>
-              <Pressable style={{}} onPress={() => close()}>
+              <Pressable  hitSlop={
+   {
+   left: 100, // To increase press area on the left side
+   right: 100,// To increase press area on the right side
+   bottom: 50,
+   top: 50,
+   }}  onPress={() => close()}>
                 <Image
                   style={{width: 15, height: 15}}
                   source={require('../assets/images/close.png')}
                 />
               </Pressable>
             </View>
-            <View></View>
+        
 
-            {/* <RadioWithText  changeValue={changeValue}  close={close} arr={data}/> */}
+           
             <View style={{flexDirection:'row'}}>
 
             <TouchableOpacity onPress={() => pickFromGallery()}>
               <View style={Styles.button}>
-                <Text>select from gallery</Text>
+                <Text style={{fontFamily:'Poppins-SemiBold',}}>select from gallery</Text>
               </View>
             </TouchableOpacity>
             </View>
             <View style={{flexDirection:'row'}}>  
             <TouchableOpacity onPress={() => takeFromCamera()}>
               <View style={Styles.button}>
-                <Text>Take from Camera</Text>
+                <Text style={{fontFamily:'Poppins-SemiBold',}}>Take from Camera</Text>
               </View>
             </TouchableOpacity></View>
             
@@ -100,13 +106,14 @@ const Styles = StyleSheet.create({
     shadowColor: '#000',
   },
   button: {
-    borderWidth: 1,
+    borderWidth: 2,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     padding:5,
     margin:5,
     borderRadius:5,
+    borderColor:'#b59f84',
   },
 });
 

@@ -7,6 +7,7 @@ import {
   FlatList,
   Dimensions,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {
@@ -15,15 +16,18 @@ import {
   ChipsWithText,
   OfferCard,
 } from '../../components/Index';
-import {images} from '../../assets/images/Index';
+import FilterModal from '../../components/FilterModal';
+import ChipsComponent from '../../components/ChipsComponent';
 
 const Explore = ({navigation}) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showFilterModal,setShowFilterModal]=useState(false);
 
   const handleActiveIndex = index => {
     setActiveIndex(index);
   };
   offers = ['All', 'Giveaways', 'Deals', 'Events'];
+ 
   return (
     <>
       <CommonHeader showBackArrow={false}></CommonHeader>
@@ -44,10 +48,19 @@ const Explore = ({navigation}) => {
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
               }}>
+              <TouchableOpacity onPress={()=>setShowFilterModal(true)} hitSlop={
+   {
+   left: 20, // To increase press area on the left side
+   right: 20,// To increase press area on the right side
+   bottom: 10,
+   top: 10,
+   }}>
               <Image
                 style={{width: 20, height: 20}}
                 source={require('../../assets/images/filter.png')}
               />
+              </TouchableOpacity>
+             
               <View
                 style={{
                   backgroundColor: '#b59f84',
@@ -69,26 +82,19 @@ const Explore = ({navigation}) => {
             Explore limited time offers and community events
           </Text>
           <View>
-            <View style={styles.chipsContainer}>
-              <FlatList
-                data={offers}
-                horizontal
-                renderItem={({item, index, activeIndex, handleActiveIndex}) => (
-                  <ChipsWithText
-                    text={item}
-                    index={index}
-                    activeIndex={activeIndex}
-                    handleActiveIndex={handleActiveIndex}
-                  />
-                )}
-              />
-            </View>
+       
+            <ChipsComponent/>
           </View>
 
           {[1, 2, 3].map(() => (
             <OfferCard navigation={navigation}  />
           ))}
         </View>
+        <FilterModal 
+        show={showFilterModal}
+        close={()=>setShowFilterModal(false)}
+      
+        />
       </ScrollView>
     </>
   );
@@ -103,8 +109,9 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: 'black',
-    fontWeight: 'bold',
+   
     fontSize: 40,
+    fontFamily:'Poppins-BoldItalic',
   },
   searchContainer: {
     margin: 15,
@@ -129,10 +136,11 @@ const styles = StyleSheet.create({
   },
   subHeading: {
     color: '#b7b7b7',
-    fontSize: 15,
-    fontStyle: 'normal',
-    fontWeight: '400',
+    fontSize: 14,
+  
+   
     paddingTop: 20,
+    fontFamily:'Poppins-Light',
   },
   chipsContainer: {
     paddingTop: 20,

@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {navigationRef} from './NavigationService';
+
 import {
   SplashScreen,
   Login,
@@ -60,6 +61,56 @@ const AuthenticationStack = () => {
 const TabStack = () => {
   return (
     <Tab.Navigator  sceneContainerStyle={{backgroundColor: '#00000'}} 
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let icon;
+            switch (route.name) {
+              case 'Home':
+                icon = focused
+                  ? require('../assets/images/homeColoredIcon.png')
+                  : require('../assets/images/homeIcon.png');
+                break;
+              case 'Profile':
+                icon = focused
+                  ? require('../assets/images/profileColoredIcon.png')
+                  : require('../assets/images/profileIcon.png');
+                break;
+              case 'CreatePost':
+                icon = focused
+                  ? require('../assets/images/CreatePostColoredIcon.png')
+                  : require('../assets/images/CreatePostIcon.png');
+                break;
+              case 'Explore':
+                icon = focused
+                  ? require('../assets/images/exploreColoredIcon.png')
+                  : require('../assets/images/exploreIcon.png');
+                break;
+              default:
+                break;
+            }
+            return <Image source={icon} style={{ width: 25, height: 25,}} />;
+          },
+          tabBarStyle: {
+      backgroundColor: 'black',
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      borderRadius:0,
+      height:65,
+      overflow: 'hidden',
+      padding:10
+    },
+   
+        })}
+
+
+        tabBarOptions={{
+          
+          activeTintColor: '#b59f84',
+          inactiveTintColor: 'gray',
+          keyboardHidesTabBar: true,
+       
+        }}
+
     >
       <Tab.Screen
         name="Home"

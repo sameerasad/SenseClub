@@ -29,7 +29,7 @@ const HomeImage = () => {
             Productivity
         </Text>
         <TouchableOpacity style={Styles.sliderButton}>
-          <Text style={{color: '#b59f84', textAlign: 'center'}}>Read More</Text>
+          <Text style={{color: '#b59f84', textAlign: 'center',fontFamily:"Poppins-Light"}}>Read More</Text>
         </TouchableOpacity>
       </View>
       
@@ -50,13 +50,14 @@ const Styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     color: '#fff',
-    fontWeight: '500',
+  
     minHeight: 175,
     textAlignVertical:'center',
+    fontFamily:'Poppins-Bold'
     
   },
   sliderButton: {
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal:25,
     backgroundColor: '#fff',
     borderRadius: 30,

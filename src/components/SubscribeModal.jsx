@@ -31,9 +31,15 @@ const SubscribeModal = ({show = false,close, changeValue}) => {
       <View style={Styles.centeredView}>
         <View style={Styles.modalView}>
         <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',}}>  
-        <Text style={{fontWeight:'bold',fontSize:20}}>Select From the Following</Text>
+        <Text style={{fontSize:20,fontFamily:'Poppins-Bold'}}>Select From the Following</Text>
         <Pressable
-              style={{}}
+                hitSlop={
+   {
+   left: 100, // To increase press area on the left side
+   right: 100,// To increase press area on the right side
+   bottom: 50,
+   top: 50,
+   }}
               onPress={() => close()}>
             <Image
               style={{width: 15, height: 15}}

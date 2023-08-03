@@ -1,13 +1,22 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import {CommonText} from './Index';
 
-const Input = ({heading, placeHolderText, isPassword = false}) => {
+const Input = ({heading, placeHolderText, isPassword = false,onDataChanged }) => {
+  const [inputData, setInputData] = useState('');
+
+  const handleInputChange = (text) => {
+    setInputData(text);
+    // Call the callback function and pass the data as an argument
+    onDataChanged(text);
+  };
   return (
     <View>
       <CommonText text={heading} />
       <TextInput
         secureTextEntry={isPassword}
+        value={inputData}
+        onChangeText={(e)=>handleInputChange(e)}
         // placeholder={placeHolderText}
         selectionColor={'#b59f84'}
         style={styles.InputField}></TextInput>
@@ -16,10 +25,7 @@ const Input = ({heading, placeHolderText, isPassword = false}) => {
 };
 
 const styles = StyleSheet.create({
-  heading: {
-    fontWeight: 'bold',
-    marginTop: 20,
-  },
+  
   InputField: {
     padding: 10,
     borderWidth: 1,

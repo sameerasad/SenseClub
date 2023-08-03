@@ -22,7 +22,7 @@ const RadioForNewPost = () => {
           <View style={Styles.radioBtton}>
             {selectedRadio === item.id ? <View style={Styles.radiobg} /> : null}
           </View>
-          <Text>{item.name}</Text>
+          <Text style={{fontFamily:'Poppins-Medium'}}>{item.name}</Text>
         </View>
       </TouchableOpacity>
         )

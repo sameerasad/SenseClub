@@ -40,7 +40,7 @@ setSelectedValue(val);
           <CommonHeader showBackArrow={false}/>
           <View style={{flexDirection: 'row'}}>
             <View style={Styles.Category}>
-              <Text>Products</Text>
+              <Text style={{fontFamily:'Poppins-Medium'}}>Products</Text>
             </View>
           </View>
           <View
@@ -57,7 +57,7 @@ setSelectedValue(val);
 
             <View style={{marginLeft: 10}}>
               <Text style={Styles.Username}>sameer</Text>
-              <Text>12 post 1 Comments</Text>
+              <Text style={{fontFamily:'Poppins-Light'}}>12 post 1 Comments</Text>
             </View>
           </View>
           <Text style={Styles.PostHeading}>
@@ -70,7 +70,7 @@ setSelectedValue(val);
               style={{width: 20, height: 20}}
               source={require('../../assets/images/price-tag.png')}
             />
-            <Text style={{paddingLeft: 10, fontSize: 16, paddingBottom: 4}}>
+            <Text style={{paddingLeft: 10, fontSize: 16,marginRight:5, paddingBottom: 4,fontFamily:'Poppins-SemiBold'}}>
               Tags:
             </Text>
 
@@ -79,7 +79,7 @@ setSelectedValue(val);
               horizontal
               renderItem={({item, index, activeIndex, handleActiveIndex}) => (
                 <View style={Styles.Tags}>
-                  <Text>{item}</Text>
+                  <Text style={{fontFamily:'Poppins-Medium'}}>{item}</Text>
                 </View>
               )}
             />
@@ -132,10 +132,10 @@ setSelectedValue(val);
                 alignItems: 'center',
               }}>
               <Image
-                style={{width: 20, height: 20}}
+                style={{width: 20, height: 20,tintColor:'black'}}
                 source={require('../../assets/images/email.png')}
               />
-              <Text style={{fontSize: 16, marginLeft: 5}}>Subscribe</Text>
+              <Text style={{fontSize: 16, marginLeft: 5,fontFamily:'Poppins-SemiBold'}}>Subscribe</Text>
               <Image
                 style={{width: 20, height: 20, marginLeft: 5}}
                 source={require('../../assets/images/downward-arrow.png')}
@@ -154,10 +154,11 @@ setSelectedValue(val);
                   marginLeft: 20,
                   marginRight: 20,
                 }}>
-                <Text>Notify of</Text>
+                <Text style={{fontFamily:'Poppins-SemiBold'}}>Notify of</Text>
                 <TouchableOpacity onPress={()=>setShowModal(true)}>
                 <View
                   style={{
+                  
                     borderWidth: 1,
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -165,7 +166,7 @@ setSelectedValue(val);
                     marginLeft: 20,
                   }}>
                 
-                  <Text>{selectedvalue} </Text>
+                  <Text style={{fontFamily:'Poppins-Medium'}}>{selectedvalue} </Text>
                   <Image
                     style={{width: 15, height: 15}}
                     source={require('../../assets/images/sort.png')}
@@ -191,21 +192,28 @@ setSelectedValue(val);
               </View>
             </View>
           ) : null}
+       
+         
         </View>
         <SubscribeModal 
         show={showModal}
         close={()=>setShowModal(false)}
         changeValue={changeValue}
         />
-    <Comments comments={commentsData}/>
+    {/* <Comments comments={commentsData}/> */}
+    <View >
+          <Comments comments={commentsData}/>
+          </View>
       </ScrollView>
-      
+     
     </KeyboardAvoidingView>
   );
 };
 
 const Styles = StyleSheet.create({
-  MainContainer: {},
+  MainContainer: {
+    flex:1
+  },
   Category: {
     borderRadius: 0,
     margin: 20,
@@ -222,14 +230,16 @@ const Styles = StyleSheet.create({
   },
   Username: {
     fontSize: 20,
-    fontWeight: 'bold',
+    
     color: 'black',
+    fontFamily:'Poppins-SemiBold',
   },
   PostHeading: {
     padding: 20,
     fontSize: 25,
     color: 'black',
     fontWeight: '700',
+    fontFamily:'Poppins-ExtraBold',
   },
   Tags: {
     borderRadius: 0,
