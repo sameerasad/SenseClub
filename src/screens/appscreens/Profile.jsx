@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 
 import React from 'react';
@@ -16,9 +17,13 @@ const Width = Dimensions.get('window').width;
 const Profile = () => {
   return (
     <>
-      <View style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1}}>
         <View
-          style={{backgroundColor: '#E5E5E5', margin: 10, borderRadius: 20}}>
+          style={{
+            backgroundColor: '#E5E5E5',
+            margin: 10,
+            borderRadius: 20,
+          }}>
           <ImageBackground
             resizeMode="cover"
             style={Styles.sliderWrapper}
@@ -30,29 +35,39 @@ const Profile = () => {
             source={require('../../assets/images/profileBgImage.png')}>
             <View
               style={{
-                height: height / 2.8,
+                height: height / 2.6,
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginTop: 10,
+                // marginTop: 10,
               }}>
               <Image
-                style={{width: 100, height: 100}}
+                style={{width: 90, height: 90}}
                 source={require('../../assets/images/profilePicture.png')}
               />
-              <Text style={{fontSize: 19, color: 'black',fontFamily:'Poppins-SemiBold'}}>
+              <Text
+                style={{
+                  fontSize: 19,
+                  color: 'black',
+                  fontFamily: 'Poppins-SemiBold',
+                }}>
                 @UnpluggedEssentials
               </Text>
-              <Text style={{fontSize: 15,fontFamily:'Poppins-Light'}}>
+              <Text style={{fontSize: 15, fontFamily: 'Poppins-Light'}}>
                 Jessie James
               </Text>
               <Text
-                style={{textAlign: 'center',  fontSize: 14,fontFamily:'Poppins-Light'}}>
+                style={{
+                  textAlign: 'center',
+                  fontSize: 14,
+                  fontFamily: 'Poppins-Light',
+                }}>
                 The perfect collection of hair products packed with nourishing
                 vitamins to make your hair shine!
               </Text>
               <View
                 style={{
                   marginTop: 10,
+
                   flexDirection: 'row',
 
                   justifyContent: 'space-between',
@@ -61,7 +76,7 @@ const Profile = () => {
                   style={Styles.shareICons}
                   source={require('../../assets/images/facebookIcon.png')}
                 />
-             
+
                 <Image
                   style={Styles.shareICons}
                   source={require('../../assets/images/instagram.png')}
@@ -74,7 +89,7 @@ const Profile = () => {
                   style={Styles.shareICons}
                   source={require('../../assets/images/tiktok.png')}
                 />
-                 <Image
+                <Image
                   style={Styles.shareICons}
                   source={require('../../assets/images/youtube.png')}
                 />
@@ -93,19 +108,29 @@ const Profile = () => {
             margin: 10,
           }}>
           <View style={{alignItems: 'center'}}>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Bold'}}>8</Text>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Medium'}}>Posts</Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Bold'}}>8</Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Medium'}}>
+              Posts
+            </Text>
           </View>
           <View style={{alignItems: 'center'}}>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Bold'}}>231</Text>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Medium'}}>Followers</Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Bold'}}>
+              231
+            </Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Medium'}}>
+              Followers
+            </Text>
           </View>
           <View style={{alignItems: 'center'}}>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Bold'}}>1840</Text>
-            <Text style={{ color: 'black',fontFamily:'Poppins-Medium'}}>Likes</Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Bold'}}>
+              1840
+            </Text>
+            <Text style={{color: 'black', fontFamily: 'Poppins-Medium'}}>
+              Likes
+            </Text>
           </View>
         </View>
-      </View>
+      </SafeAreaView>
       <View style={{height: height / 10}} />
       <ProfileTabViewExample />
     </>
@@ -125,7 +150,7 @@ const Styles = StyleSheet.create({
     fontWeight: '500',
     minHeight: 175,
     textAlignVertical: 'center',
-    fontFamily:'Poppins'
+    fontFamily: 'Poppins',
   },
   sliderButton: {
     paddingVertical: 10,
